@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+firmware/sandbox-node/include/secrets.h
+.env
+*.env
+
+# Runtime logs
+collector/logs/
+ml/logs/
+telemetry/logs/
+
+# Frontend generated
+frontend/node_modules/
+frontend/dist/
+
+# PlatformIO generated
+firmware/sandbox-node/.pio/
+firmware/sandbox-node/.vscode/
+
+# IDE / OS
+.vscode/
+.DS_Store
