@@ -24,3 +24,4 @@ firmware/sandbox-node/.vscode/
 # IDE / OS
 .vscode/
 .DS_Store
+ml/data/real_labeled.csv
