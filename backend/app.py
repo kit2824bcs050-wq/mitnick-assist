@@ -10,6 +10,9 @@ from backend.services.investigator import investigate_alert
 
 from backend.services.genai import investigate_with_genai
 
+from pydantic import BaseModel
+from backend.services.chatbot import soc_chat
+
 app = FastAPI(
     title="MITNICK ASSIST API",
     version="0.1.0",
@@ -26,6 +29,9 @@ app.add_middleware(
 PREDICTION_LOG = Path(
     "ml/logs/live_predictions.jsonl"
 )
+
+class ChatRequest(BaseModel):
+    message: str
 
 
 def load_predictions():
@@ -47,6 +53,12 @@ def load_predictions():
                 continue
 
     return records
+
+
+
+@app.post("/ai/chat")
+def ai_chat(request: ChatRequest):
+    return soc_chat(request.message)
 
 
 @app.get("/")
