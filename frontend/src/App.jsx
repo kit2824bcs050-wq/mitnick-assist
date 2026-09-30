@@ -14,7 +14,7 @@ import AiSoc from "./pages/AiSoc";
 import Analytics from "./pages/Analytics";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
-
+import Topbar from "./components/Topbar";
 
 function App() {
   return (
@@ -23,7 +23,9 @@ function App() {
       <Sidebar />
 
       <div className="soc-main">
+        <Topbar />
 
+        <div className="soc-content">
         <Routes>
 
           <Route
@@ -74,6 +76,7 @@ function App() {
         </Routes>
 
       </div>
+    </div>
 
       <SocChat />
 
